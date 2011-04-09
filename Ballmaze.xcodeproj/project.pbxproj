@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A87174481350EDC300A87643 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87174471350EDC300A87643 /* Cocoa.framework */; };
+		A87174521350EDC300A87643 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A87174501350EDC300A87643 /* InfoPlist.strings */; };
+		A87174551350EDC300A87643 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A87174541350EDC300A87643 /* main.m */; };
+		A87174581350EDC300A87643 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A87174561350EDC300A87643 /* Credits.rtf */; };
+		A871745B1350EDC300A87643 /* BallmazeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A871745A1350EDC300A87643 /* BallmazeAppDelegate.m */; };
+		A871745E1350EDC300A87643 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A871745C1350EDC300A87643 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A87174431350EDC300A87643 /* Ballmaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ballmaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A87174471350EDC300A87643 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A871744A1350EDC300A87643 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		A871744B1350EDC300A87643 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A871744C1350EDC300A87643 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A871744F1350EDC300A87643 /* Ballmaze-Info.plist */ = {isa = PBXFileReference; path = "Ballmaze-Info.plist"; sourceTree = "<group>"; };
+		A87174511350EDC300A87643 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A87174531350EDC300A87643 /* Ballmaze-Prefix.pch */ = {isa = PBXFileReference; path = "Ballmaze-Prefix.pch"; sourceTree = "<group>"; };
+		A87174541350EDC300A87643 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A87174571350EDC300A87643 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		A87174591350EDC300A87643 /* BallmazeAppDelegate.h */ = {isa = PBXFileReference; path = BallmazeAppDelegate.h; sourceTree = "<group>"; };
+		A871745A1350EDC300A87643 /* BallmazeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BallmazeAppDelegate.m; sourceTree = "<group>"; };
+		A871745D1350EDC300A87643 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A87174401350EDC300A87643 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A87174481350EDC300A87643 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A87174381350EDC200A87643 = {
+			isa = PBXGroup;
+			children = (
+				A871744D1350EDC300A87643 /* Ballmaze */,
+				A87174461350EDC300A87643 /* Frameworks */,
+				A87174441350EDC300A87643 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A87174441350EDC300A87643 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A87174431350EDC300A87643 /* Ballmaze.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A87174461350EDC300A87643 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A87174471350EDC300A87643 /* Cocoa.framework */,
+				A87174491350EDC300A87643 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A87174491350EDC300A87643 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A871744A1350EDC300A87643 /* AppKit.framework */,
+				A871744B1350EDC300A87643 /* CoreData.framework */,
+				A871744C1350EDC300A87643 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		A871744D1350EDC300A87643 /* Ballmaze */ = {
+			isa = PBXGroup;
+			children = (
+				A87174591350EDC300A87643 /* BallmazeAppDelegate.h */,
+				A871745A1350EDC300A87643 /* BallmazeAppDelegate.m */,
+				A871745C1350EDC300A87643 /* MainMenu.xib */,
+				A871744E1350EDC300A87643 /* Supporting Files */,
+			);
+			path = Ballmaze;
+			sourceTree = "<group>";
+		};
+		A871744E1350EDC300A87643 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A871744F1350EDC300A87643 /* Ballmaze-Info.plist */,
+				A87174501350EDC300A87643 /* InfoPlist.strings */,
+				A87174531350EDC300A87643 /* Ballmaze-Prefix.pch */,
+				A87174541350EDC300A87643 /* main.m */,
+				A87174561350EDC300A87643 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A87174421350EDC300A87643 /* Ballmaze */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A87174611350EDC300A87643 /* Build configuration list for PBXNativeTarget "Ballmaze" */;
+			buildPhases = (
+				A871743F1350EDC300A87643 /* Sources */,
+				A87174401350EDC300A87643 /* Frameworks */,
+				A87174411350EDC300A87643 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ballmaze;
+			productName = Ballmaze;
+			productReference = A87174431350EDC300A87643 /* Ballmaze.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A871743A1350EDC200A87643 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = Home;
+			};
+			buildConfigurationList = A871743D1350EDC200A87643 /* Build configuration list for PBXProject "Ballmaze" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A87174381350EDC200A87643;
+			productRefGroup = A87174441350EDC300A87643 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A87174421350EDC300A87643 /* Ballmaze */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A87174411350EDC300A87643 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A87174521350EDC300A87643 /* InfoPlist.strings in Resources */,
+				A87174581350EDC300A87643 /* Credits.rtf in Resources */,
+				A871745E1350EDC300A87643 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A871743F1350EDC300A87643 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A87174551350EDC300A87643 /* main.m in Sources */,
+				A871745B1350EDC300A87643 /* BallmazeAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A87174501350EDC300A87643 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A87174511350EDC300A87643 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A87174561350EDC300A87643 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A87174571350EDC300A87643 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		A871745C1350EDC300A87643 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A871745D1350EDC300A87643 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A871745F1350EDC300A87643 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A87174601350EDC300A87643 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A87174621350EDC300A87643 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Ballmaze/Ballmaze-Prefix.pch";
+				INFOPLIST_FILE = "Ballmaze/Ballmaze-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A87174631350EDC300A87643 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Ballmaze/Ballmaze-Prefix.pch";
+				INFOPLIST_FILE = "Ballmaze/Ballmaze-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A871743D1350EDC200A87643 /* Build configuration list for PBXProject "Ballmaze" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A871745F1350EDC300A87643 /* Debug */,
+				A87174601350EDC300A87643 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A87174611350EDC300A87643 /* Build configuration list for PBXNativeTarget "Ballmaze" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A87174621350EDC300A87643 /* Debug */,
+				A87174631350EDC300A87643 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A871743A1350EDC200A87643 /* Project object */;
+}

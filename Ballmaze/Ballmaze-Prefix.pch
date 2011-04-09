@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Ballmaze' target in the 'Ballmaze' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
