@@ -11,8 +11,12 @@
 @interface BallmazeAppDelegate : NSObject <NSApplicationDelegate> {
 @private
     NSWindow *window;
+    NSTextField *label;
 }
 
 @property (assign) IBOutlet NSWindow *window;
+@property (retain) IBOutlet NSTextField *label;
+
+- (IBAction) buttonClicked: (id) sender;
 
 @end

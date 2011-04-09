@@ -10,11 +10,15 @@
 
 @implementation BallmazeAppDelegate
 
-@synthesize window;
+@synthesize window, label;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+}
+
+- (IBAction) buttonClicked: (id) sender {
+    NSLog(@"foo");
 }
 
 @end
