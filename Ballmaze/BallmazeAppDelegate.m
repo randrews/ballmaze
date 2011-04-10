@@ -12,13 +12,27 @@
 
 @synthesize window, label;
 
+-(id) init {
+    self = [super init];
+    if(self){
+        id center = [NSNotificationCenter defaultCenter];
+        [center addObserver:self selector:@selector(setLabelText:) name:@"setLabelText" object:nil];        
+    }
+    return self;
+}
+
+-(void) setLabelText: (NSNotification*) notification {
+    NSString *new_text = [[notification userInfo] objectForKey:@"text"];
+    [label setStringValue:new_text];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
 }
 
 - (IBAction) buttonClicked: (id) sender {
-    NSLog(@"foo");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"buttonClicked"
+                                                        object:self];
 }
 
 @end
