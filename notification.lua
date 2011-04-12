@@ -1,15 +1,24 @@
-local times = 1
+function LM.coroutine_wrap(fn, loop)
+    local co = coroutine.create(fn)
 
-LM.observe_notification("buttonClicked",
-    function(userinfo)
-        LM.post_notification("setLabelText", {text = times})
-        times = times + 1
-        for key, val in pairs(userinfo) do
-            print(key, val)
+    return function(userinfo)
+        if loop and coroutine.status(co) == "dead" then
+            co = coroutine.create(fn)
         end
-    end)
 
-LM.observe_notification("setLabelText",
-    function()
-        print("Heard that")
-    end)
+        local success, name, userinfo = coroutine.resume(co, userinfo)
+
+        if name then
+            LM.post_notification(name, (userinfo or {}))
+        end
+    end
+end
+
+LM.observe_notification("buttonClicked", LM.coroutine_wrap(function(userinfo)
+        local msg
+        msg = coroutine.yield("setLabelText", {text = 1})
+        print(msg)
+        msg = coroutine.yield("setLabelText", {text = 2})
+        print(msg)
+        return "setLabelText", {text = 3}
+    end, true))
