@@ -17,6 +17,7 @@
 		A87174AA1350F5C100A87643 /* LuaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A87174A91350F5C100A87643 /* LuaManager.m */; };
 		A87174B91351068A00A87643 /* notification.lua in Resources */ = {isa = PBXBuildFile; fileRef = A87174B81351068A00A87643 /* notification.lua */; };
 		A8D60797135523B2000FC4AB /* ballmaze.png in Resources */ = {isa = PBXBuildFile; fileRef = A8D60796135523B2000FC4AB /* ballmaze.png */; };
+		A8D6079B1356A7B1000FC4AB /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D6079A1356A7B1000FC4AB /* MapView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,8 @@
 		A87174A91350F5C100A87643 /* LuaManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuaManager.m; sourceTree = "<group>"; };
 		A87174B81351068A00A87643 /* notification.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notification.lua; sourceTree = "<group>"; };
 		A8D60796135523B2000FC4AB /* ballmaze.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ballmaze.png; path = ../ballmaze.png; sourceTree = "<group>"; };
+		A8D607991356A7B1000FC4AB /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
+		A8D6079A1356A7B1000FC4AB /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 				A87174591350EDC300A87643 /* BallmazeAppDelegate.h */,
 				A871745A1350EDC300A87643 /* BallmazeAppDelegate.m */,
 				A871745C1350EDC300A87643 /* MainMenu.xib */,
+				A8D607991356A7B1000FC4AB /* MapView.h */,
+				A8D6079A1356A7B1000FC4AB /* MapView.m */,
 				A871744E1350EDC300A87643 /* Supporting Files */,
 			);
 			path = Ballmaze;
@@ -247,6 +252,7 @@
 				A87174551350EDC300A87643 /* main.m in Sources */,
 				A871745B1350EDC300A87643 /* BallmazeAppDelegate.m in Sources */,
 				A87174AA1350F5C100A87643 /* LuaManager.m in Sources */,
+				A8D6079B1356A7B1000FC4AB /* MapView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

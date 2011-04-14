@@ -7,15 +7,16 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "MapView.h"
 
 @interface BallmazeAppDelegate : NSObject <NSApplicationDelegate> {
 @private
     NSWindow *window;
-    NSTextField *label;
+    MapView *map;
 }
 
 @property (assign) IBOutlet NSWindow *window;
-@property (retain) IBOutlet NSTextField *label;
+@property (retain) IBOutlet MapView *map;
 
 - (IBAction) buttonClicked: (id) sender;
 
