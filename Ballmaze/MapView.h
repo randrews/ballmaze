@@ -15,4 +15,6 @@
     NSImage *image;
 }
 
+@property (retain) NSString *map_str;
+
 @end

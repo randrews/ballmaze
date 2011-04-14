@@ -11,6 +11,8 @@
 
 @implementation MapView
 
+@synthesize map_str;
+
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
@@ -49,8 +51,8 @@
 
 - (void)drawRect:(NSRect)dirtyRect
 {
-    if(map_str) {
-        const char *str = [map_str UTF8String];
+    if(self.map_str) {
+        const char *str = [self.map_str UTF8String];
         
         for (int n = 0; n < [map_str length]; n++) {
             NSRect rect = [self rectForChar:*(str + n)];
@@ -62,7 +64,7 @@
 }
 
 -(void) setMap: (NSNotification*) notification {
-    map_str = [[notification userInfo] objectForKey:@"map"];
+    self.map_str = [[notification userInfo] objectForKey:@"map"];
     [self setNeedsDisplay:true];
 }
 
