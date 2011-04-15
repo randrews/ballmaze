@@ -22,6 +22,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    [window setAcceptsMouseMovedEvents:YES];
 }
 
 - (IBAction) buttonClicked: (id) sender {

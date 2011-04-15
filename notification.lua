@@ -40,3 +40,7 @@ map_tbl[99] = "*"
 map_str = map_tbl[0] .. table.concat(map_tbl)
 
 LM.post_notification("setMap", {map = map_str})
+
+LM.observe_notification("hoverOverTile", function(tile)
+    print(tile.x, tile.y)
+end)

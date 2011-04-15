@@ -22,6 +22,7 @@
         
         id path = [[NSBundle mainBundle] pathForImageResource:@"ballmaze"];
         image = [[NSImage alloc] initWithContentsOfFile:path];
+        last_x = last_y = -1;
     }
     
     return self;
@@ -66,6 +67,37 @@
 -(void) setMap: (NSNotification*) notification {
     self.map_str = [[notification userInfo] objectForKey:@"map"];
     [self setNeedsDisplay:true];
+}
+
+-(BOOL) acceptsFirstMouse:(NSEvent *)theEvent {
+    return YES;
+}
+
+-(BOOL) mouseDownCanMoveWindow { return NO; }
+
+-(void) mouseMoved:(NSEvent *)event {
+    NSPoint pt = [self convertPoint:[event locationInWindow] fromView:nil];
+    
+    int new_x = (pt.x / 32), new_y = (10 - pt.y / 32);
+    if(new_x != last_x || new_y != last_y) {
+        last_x = new_x; last_y = new_y;
+        id tile_x = [NSNumber numberWithInt:last_x];
+        id tile_y = [NSNumber numberWithInt:last_y];
+        
+        NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:tile_x, @"x", tile_y, @"y", nil];
+        
+        id center = [NSNotificationCenter defaultCenter];
+        [center postNotificationName:@"hoverOverTile" object:self userInfo:userInfo];        
+    }
+}
+
+-(void) viewDidMoveToWindow {
+    NSTrackingArea *trackingArea = [[NSTrackingArea alloc] initWithRect:[self frame]
+                                                                options:NSTrackingMouseMoved+NSTrackingActiveInKeyWindow
+                                                                  owner:self
+                                                               userInfo:nil];
+    [self addTrackingArea:trackingArea];
+    [self becomeFirstResponder];
 }
 
 @end

@@ -13,8 +13,11 @@
 @private
     NSString *map_str;
     NSImage *image;
+    int last_x, last_y;
 }
 
 @property (retain) NSString *map_str;
+
+-(void) mouseMoved:(NSEvent *)event;
 
 @end
