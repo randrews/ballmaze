@@ -42,5 +42,18 @@ map_str = map_tbl[0] .. table.concat(map_tbl)
 LM.post_notification("setMap", {map = map_str})
 
 LM.observe_notification("hoverOverTile", function(tile)
-    print(tile.x, tile.y)
+    print("hover", tile.x, tile.y)
+
+    LM.post_notification("addPiece", {name="preview", x=tile.x, y = -1})
 end)
+
+LM.observe_notification("clickTile", function(tile)
+    print("click", tile.x, tile.y)
+
+    if(tile.y ~= -1) then
+        -- LM.post_notification("addPiece", {name="actual", x=tile.x, y=-1})
+        LM.post_notification("movePiece", {name="preview", x=tile.x, y=tile.y})
+    end
+end)
+
+-- LM.post_notification("addPiece",{name="foo", x=3, y=-1})

@@ -11,18 +11,22 @@
 
 @implementation MapView
 
-@synthesize map_str;
+@synthesize map_str, pieces;
 
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        id center = [NSNotificationCenter defaultCenter];
-        [center addObserver:self selector:@selector(setMap:) name:@"setMap" object:nil];
-        
+        [self setWantsLayer:YES];
         id path = [[NSBundle mainBundle] pathForImageResource:@"ballmaze"];
         image = [[NSImage alloc] initWithContentsOfFile:path];
         last_x = last_y = -1;
+        self.pieces = [[NSMutableDictionary alloc] init];
+
+        id center = [NSNotificationCenter defaultCenter];
+        [center addObserver:self selector:@selector(setMap:) name:@"setMap" object:nil];
+        [center addObserver:self selector:@selector(addPiece:) name:@"addPiece" object:nil];
+        [center addObserver:self selector:@selector(movePiece:) name:@"movePiece" object:nil];
     }
     
     return self;
@@ -31,6 +35,42 @@
 - (void)dealloc
 {
     [super dealloc];
+}
+
+-(void) awakeFromNib {
+}
+
+-(NSPoint) pixelPointForTilePoint: (NSPoint) pt {
+    return NSMakePoint(pt.x * 32, 32 * (9 - pt.y));
+}
+
+-(void) addPiece: (NSNotification*) notification {
+    NSDictionary *params = [notification userInfo];
+    NSView *old = [pieces objectForKey:[params objectForKey:@"name"]];
+    if(old) {
+        [pieces removeObjectForKey:[params objectForKey:@"name"]];
+        [old removeFromSuperview];
+    }
+    
+    NSPoint pt = [self pixelPointForTilePoint:NSMakePoint([[params objectForKey:@"x"] floatValue],
+                                                          [[params objectForKey:@"y"] floatValue])];
+    
+    NSView *piece = [[PieceView alloc] initWithFrame:NSMakeRect(pt.x, pt.y, 32, 32)
+                                           tilesheet:image
+                                                tile:0];
+    [self addSubview:piece];
+    [pieces setObject:piece forKey:[params objectForKey:@"name"]];
+}
+
+-(void) movePiece: (NSNotification*) notification {
+    NSDictionary *params = [notification userInfo];
+    NSView *piece = [pieces objectForKey:[params objectForKey:@"name"]];
+    if(piece) {
+        NSPoint pt = [self pixelPointForTilePoint:NSMakePoint([[params objectForKey:@"x"] floatValue],
+                                                              [[params objectForKey:@"y"] floatValue])];
+        
+        [[piece animator] setFrame:NSMakeRect(pt.x, pt.y, 32, 32)];
+    }
 }
 
 -(NSRect) rectForChar: (char) c {
@@ -62,6 +102,7 @@
             [image compositeToPoint:NSMakePoint(x * 32, (10 - y) * 32 - 32) fromRect:rect operation:NSCompositeSourceAtop];
         }
     }
+    
 }
 
 -(void) setMap: (NSNotification*) notification {
@@ -75,12 +116,25 @@
 
 -(BOOL) mouseDownCanMoveWindow { return NO; }
 
--(void) mouseMoved:(NSEvent *)event {
+-(NSPoint) pointForEvent: (NSEvent*) event {
     NSPoint pt = [self convertPoint:[event locationInWindow] fromView:nil];
-    
-    int new_x = (pt.x / 32), new_y = (10 - pt.y / 32);
-    if(new_x != last_x || new_y != last_y) {
-        last_x = new_x; last_y = new_y;
+    int x = (pt.x / 32), y = (9 - (int)(pt.y / 32));
+    return NSMakePoint(x, y);
+}
+
+-(void) mouseUp:(NSEvent *) event {
+    NSPoint pt = [self pointForEvent:event];
+    id tile_x = [NSNumber numberWithInt:pt.x];
+    id tile_y = [NSNumber numberWithInt:pt.y];
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:tile_x, @"x", tile_y, @"y", nil];
+    id center = [NSNotificationCenter defaultCenter];
+    [center postNotificationName:@"clickTile" object:self userInfo:userInfo];
+}
+
+-(void) mouseMoved:(NSEvent *)event {
+    NSPoint pt = [self pointForEvent:event];
+    if(pt.x != last_x || pt.y != last_y) {
+        last_x = pt.x; last_y = pt.y;
         id tile_x = [NSNumber numberWithInt:last_x];
         id tile_y = [NSNumber numberWithInt:last_y];
         

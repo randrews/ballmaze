@@ -408,13 +408,13 @@
 			<object class="NSWindowTemplate" id="972006081">
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{335, 390}, {320, 320}}</string>
-				<int key="NSWTFlags">1954021376</int>
+				<string key="NSWindowRect">{{335, 390}, {320, 352}}</string>
+				<int key="NSWTFlags">1685585920</int>
 				<string key="NSWindowTitle">Ballmaze</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
-				<string key="NSWindowContentMaxSize">{320, 320}</string>
-				<string key="NSWindowContentMinSize">{320, 320}</string>
+				<string key="NSWindowContentMaxSize">{320, 352}</string>
+				<string key="NSWindowContentMinSize">{320, 352}</string>
 				<object class="NSView" key="NSWindowView" id="439893737">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
@@ -423,7 +423,7 @@
 						<object class="NSCustomView" id="888720030">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrameSize">{320, 320}</string>
+							<string key="NSFrameSize">{320, 352}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView"/>
@@ -431,15 +431,15 @@
 							<string key="NSClassName">MapView</string>
 						</object>
 					</object>
-					<string key="NSFrame">{{7, 11}, {320, 320}}</string>
+					<string key="NSFrame">{{7, 11}, {320, 352}}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="888720030"/>
 					<int key="NSViewLayerContentsRedrawPolicy">2</int>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1058}}</string>
-				<string key="NSMinSize">{320, 342}</string>
-				<string key="NSMaxSize">{320, 342}</string>
+				<string key="NSMinSize">{320, 374}</string>
+				<string key="NSMaxSize">{320, 374}</string>
 			</object>
 			<object class="NSCustomObject" id="976324537">
 				<string key="NSClassName">BallmazeAppDelegate</string>
@@ -1057,6 +1057,10 @@
 					<string>539.IBAttributePlaceholdersKey</string>
 					<string>539.IBPluginDependency</string>
 					<string>540.IBPluginDependency</string>
+					<string>540.IBViewIntegration.shadowBlurRadius</string>
+					<string>540.IBViewIntegration.shadowColor</string>
+					<string>540.IBViewIntegration.shadowOffsetHeight</string>
+					<string>540.IBViewIntegration.shadowOffsetWidth</string>
 					<string>56.IBPluginDependency</string>
 					<string>56.ImportedFromIB2</string>
 					<string>57.IBEditorWindowLastContentRect</string>
@@ -1180,6 +1184,13 @@
 					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<real value="0.0"/>
+					<object class="NSColor">
+						<int key="NSColorSpace">3</int>
+						<bytes key="NSWhite">MAA</bytes>
+					</object>
+					<real value="0.0"/>
+					<real value="0.0"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{{286, 129}, {275, 183}}</string>
